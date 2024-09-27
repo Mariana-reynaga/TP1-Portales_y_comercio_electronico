@@ -1,7 +1,7 @@
 <div>
     <nav class="navbar navbar-expand-lg bg-info mb-3 p-3">
         <div class="container-fluid">
-            <a href="" class="navbar-brand fs-4">Lamparas</a>
+            <a href="/" class="navbar-brand fs-4">Lamparas</a>
 
             {{-- menu hamburguesa toggable --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">
@@ -12,14 +12,15 @@
               <div class="collapse navbar-collapse justify-content-center" id="navBar">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link fs-5" href="#">Home</a>
+                    <x-nav-link route="home">Home</x-nav-link>
+
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link fs-5" href="#">Lamparas</a>
+                    <x-nav-link route="productos.home">Lamparas</x-nav-link>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link fs-5" href="#">Blog</a>
+                    <x-nav-link route="blog.home">Blog</x-nav-link>
                   </li>
                 </ul>
               </div>

@@ -1,10 +1,8 @@
 @extends('layouts.main')
 
-@section('title', 'Home')
+@section('title', 'Pag de inicio')
 
 @section('content')
-
-
     <div class="container bg-secondary my-3">
         <h2>este es el home</h2>
     </div>
