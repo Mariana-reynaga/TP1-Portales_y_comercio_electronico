@@ -14,4 +14,12 @@ class BlogController extends Controller
             'blogs' => $todosBlog
         ]);
     }
+
+    public function article(int $id){
+        $articleData = Blog::find($id);
+
+        return view('blog.article', [
+            'articulo' => $articleData
+        ]);
+    }
 }
