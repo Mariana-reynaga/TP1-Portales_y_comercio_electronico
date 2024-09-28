@@ -16,6 +16,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $posts->title }}</h5>
                             <p class="card-text">Autor: {{ $posts->author }}</p>
+                            <button class="btn bg-primary" > </button>
                         </div>
                     </div>
                 </div>
