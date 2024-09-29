@@ -22,4 +22,12 @@ class BlogController extends Controller
             'articulo' => $articleData
         ]);
     }
+
+    public function indexAdminBlog(){
+        $todosBlog = Blog::all();
+
+        return view('blog.index_admin', [
+            'blogs' => $todosBlog
+        ]);
+    }
 }

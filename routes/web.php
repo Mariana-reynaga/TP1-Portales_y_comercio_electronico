@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomeController::class, "home"])
     ->name('home');
 
+
 // Rutas para productos
     // Listado de productos
 Route::get('/lamparas', [\App\Http\Controllers\ProductoController::class, "index"])
@@ -26,4 +27,32 @@ Route::get('/blog/{id}', [\App\Http\Controllers\BlogController::class, 'article'
     ->name('blog.article')
     ->whereNumber('id');
 
+
 // Rutas para Autenticación
+Route::get('/login', [\App\Http\Controllers\AuthController::class, 'logInForm'])
+    ->name('login');
+
+    // ruta para autentificar credenciales
+Route::post('/login', [\App\Http\Controllers\AuthController::class, 'loginProcess'])
+    ->name('auth.login.process');
+
+    // Cerrar Session
+Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logoutProcess'])
+    ->name('auth.logout');
+
+
+// Pagina de admin
+    // lleva a la pág. home de admin
+Route::get('/admin', [\App\Http\Controllers\HomeController::class, "adminHome"])
+    ->name('admin.home')
+    ->middleware('auth');
+
+    // lleva al listado de productos
+Route::get('/admin/lamparas', [\App\Http\Controllers\ProductoController::class, "indexAdmin"])
+    ->name('productos.admin')
+    ->middleware('auth');
+
+    // lleva al listado de blogs
+Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'indexAdminBlog'])
+    ->name('blog.admin')
+    ->middleware('auth');

@@ -8,9 +8,10 @@
             <div class="col-12">
                 <h1 class="mb-3">Ingresar a Administración</h1>
 
-                <form action="">
+                <form action="{{ route('auth.login.process') }}" method="POST">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
+                        @csrf
 
                         <input
                             type="email"
@@ -31,6 +32,8 @@
                             class="form-control"
                         >
                     </div>
+
+                    <button type="submit" class="btn bg-primary my-3">Login</button>
                 </form>
             </div>
         </div>

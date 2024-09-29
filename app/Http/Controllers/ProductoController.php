@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
-    // protected $primaryKey = "prod_id";
-
     public function index(){
         $todosProductos = Producto::all();
 
@@ -22,6 +20,14 @@ class ProductoController extends Controller
 
         return view('Productos.individual', [
             'producto' => $productoData
+        ]);
+    }
+
+    public function indexAdmin(){
+        $todosProductos = Producto::all();
+
+        return view('Productos.index_admin_productos', [
+            'productos' => $todosProductos
         ]);
     }
 }

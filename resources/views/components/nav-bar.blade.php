@@ -27,7 +27,17 @@
 
               {{-- boton login --}}
               <div class="justify-content-end">
-                <a href="#" class="btn btn-outline-danger color-red" type="submit">Login</a>
+
+                @guest
+                    <x-nav-link route="login">Login</x-nav-link>
+
+                @else
+                    <form action="{{ route('auth.logout') }}" method="POST">
+                        @csrf
+                        <button class="btn" type="submit">{{ auth()->user()->name }} Cerrar Sesión</button>
+                    </form>
+                @endguest
+                {{-- <a href="route" class="btn btn-outline-danger color-red" type="submit">Login</a> --}}
               </div>
         </div>
     </nav>
