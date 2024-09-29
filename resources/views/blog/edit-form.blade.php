@@ -1,63 +1,64 @@
 @extends('layouts.admin')
 
-@section('title', $producto->name)
+@section('title', $articulo->title)
 
 @section('content')
     <div class="container">
-        <h1>Editar {{$producto->name}}</h1>
+        <h1>Editar {{$articulo->title}}</h1>
 
         @if ($errors->any())
             <div class="container alert alert-danger" role="alert">
                 Los datos ingresados no son validos.
             </div>
         @endif
-        
-        <form action="{{ route('productos.editar', ['id'=> $producto->prod_id] ) }}" method="post">
+        <form action="{{ route('blog.editar', ['id'=> $articulo->blog_id] ) }}" method="post">
             @csrf
 
             @method('PUT')
 
             <div class="container my-3">
-                <label for="name" class="form-label">Titulo del Producto</label>
+                <label for="title" class="form-label">Titulo del articulo</label>
                 <input
                     type="text"
-                    name="name"
-                    id="name"
+                    name="title"
+                    id="title"
                     class="form-control"
-                    value="{{ old('name',$producto->name) }}"
+                    value="{{ old('title',$articulo->title) }}"
                 >
 
-                @error('name')
+                @error('title')
                     <div class="text-danger"> {{ $message }} </div>
                 @enderror
             </div>
 
             <div class="container my-3">
-                <label for="price" class="form-label">price del Producto</label>
+                <label for="author" class="form-label">Autor del articulo</label>
                 <input
-                    type="number"
-                    name="price"
-                    id="price"
+                    type="text"
+                    name="author"
+                    id="author"
                     class="form-control"
-                    value="{{ old('price',$producto->price) }}"
+                    value="{{ old('author',$articulo->author) }}"
                 >
 
-                @error('price')
+                @error('author')
                     <div class="text-danger"> {{ $message }} </div>
                 @enderror
             </div>
 
             <div class="container my-3">
-                <label for="stock" class="form-label">Stock del Producto</label>
-                <input
-                    type="number"
-                    name="stock"
-                    id="stock"
-                    class="form-control"
-                    value="{{ old('stock',$producto->stock) }}"
-                >
+                <label for="post" class="form-label">Post</label>
 
-                @error('stock')
+                <textarea
+                    name="post"
+                    id="post"
+                    cols="30"
+                    rows="10"
+                    class="form-control"
+                >{{ old('post',$articulo->post) }}
+                </textarea>
+
+                @error('post')
                     <div class="text-danger"> {{ $message }} </div>
                 @enderror
             </div>

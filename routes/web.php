@@ -84,3 +84,31 @@ Route::delete('/admin/lamparas/delete/{id}', [\App\Http\Controllers\ProductoCont
 Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'indexAdminBlog'])
     ->name('blog.admin')
     ->middleware('auth');
+
+    // Vista de creación de Blog
+Route::get('/admin/blog/create', [\App\Http\Controllers\BlogController::class, "createBlogView"])
+    ->name('blog.create.view')
+    ->middleware('auth');
+
+    // Crear Articulo
+Route::post('/admin/blog/create', [\App\Http\Controllers\BlogController::class, "createBlog"])
+    ->name('blog.create')
+    ->middleware('auth');
+
+    // Vista de edición de un articulo
+Route::get('/admin/blog/{id}', [\App\Http\Controllers\BlogController::class, "editBlogView"])
+    ->name('blog.editar.view')
+    ->whereNumber('id')
+    ->middleware('auth');
+
+    // Editar un articulo
+Route::put('/admin/blog/{id}', [\App\Http\Controllers\BlogController::class, "editBlog"])
+    ->name('blog.editar')
+    ->whereNumber('id')
+    ->middleware('auth');
+
+    // Eliminar un articulo
+Route::delete('/admin/blog/delete/{id}', [\App\Http\Controllers\BlogController::class, "deleteBlog"])
+    ->name('blog.eliminar')
+    ->whereNumber('id')
+    ->middleware('auth');
