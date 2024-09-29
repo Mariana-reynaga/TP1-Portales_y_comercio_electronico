@@ -11,6 +11,14 @@
 <body>
     <x-nav-bar-admin></x-nav-bar-admin>
 
+    @if (session()->has('feedback.notif'))
+        <div class="container alert alert-success alert-dismissible fade show">
+
+            {!! session()->get('feedback.notif') !!}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     @yield('content')
 
     <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>

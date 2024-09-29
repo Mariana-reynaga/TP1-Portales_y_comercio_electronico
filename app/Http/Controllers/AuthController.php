@@ -19,7 +19,7 @@ class AuthController extends Controller
                    ->back(fallback: route('login'))
             ->withInput();
             // esto poner cuando ponga lo de mensaje de error en la plantilla
-            // ->with('nombre', 'mensaje');
+            // ->with('name', 'mensaje');
         }else{
             // si todo sale bien que me lleve a la pagina de inicio de admin
             return redirect()->route('admin.home');

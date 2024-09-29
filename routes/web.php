@@ -52,6 +52,22 @@ Route::get('/admin/lamparas', [\App\Http\Controllers\ProductoController::class, 
     ->name('productos.admin')
     ->middleware('auth');
 
+    // Ir al formulario de crear producto
+Route::get('/admin/lamparas/create', [\App\Http\Controllers\ProductoController::class, "createProductView"])
+    ->name('productos.create.view')
+    ->middleware('auth');
+
+    // Subir un producto
+Route::post('/admin/lamparas/create', [\App\Http\Controllers\ProductoController::class, "createProduct"])
+    ->name('productos.create')
+    ->middleware('auth');
+
+    // Edición de un producto
+Route::get('/admin/lamparas/{id}', [\App\Http\Controllers\ProductoController::class, "editProductView"])
+    ->name('productos.editar.view')
+    ->whereNumber('id')
+    ->middleware('auth');
+
     // lleva al listado de blogs
 Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'indexAdminBlog'])
     ->name('blog.admin')
