@@ -62,9 +62,21 @@ Route::post('/admin/lamparas/create', [\App\Http\Controllers\ProductoController:
     ->name('productos.create')
     ->middleware('auth');
 
-    // Edición de un producto
+    // Vista de edición de un producto
 Route::get('/admin/lamparas/{id}', [\App\Http\Controllers\ProductoController::class, "editProductView"])
     ->name('productos.editar.view')
+    ->whereNumber('id')
+    ->middleware('auth');
+
+    // Edición de un producto
+Route::put('/admin/lamparas/{id}', [\App\Http\Controllers\ProductoController::class, "editProduct"])
+    ->name('productos.editar')
+    ->whereNumber('id')
+    ->middleware('auth');
+
+    // Eliminar un producto
+Route::delete('/admin/lamparas/delete/{id}', [\App\Http\Controllers\ProductoController::class, "deleteProduct"])
+    ->name('productos.eliminar')
     ->whereNumber('id')
     ->middleware('auth');
 

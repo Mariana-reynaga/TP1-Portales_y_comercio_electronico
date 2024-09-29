@@ -8,11 +8,12 @@
 
         @if ($errors->any())
             <div class="container alert alert-danger" role="alert">
-                hay un error
+                Los datos ingresados no son validos.
             </div>
         @endif
 
         <form action="" method="POST">
+            
             @csrf
             <div class="container my-3">
                 <label for="name" class="form-label">Titulo del Producto</label>

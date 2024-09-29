@@ -11,6 +11,21 @@
     <main>
         <x-nav-bar></x-nav-bar>
 
+        @if (session()->has('feedback.notif.danger'))
+            <div class="container alert alert-danger alert-dismissible fade show">
+
+                {!! session()->get('feedback.notif.danger') !!}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+        @elseif (session()->has('feedback.notif.sucess'))
+            <div class="container alert alert-success alert-dismissible fade show">
+
+                {!! session()->get('feedback.notif.sucess') !!}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         @yield('content')
 
     </main>

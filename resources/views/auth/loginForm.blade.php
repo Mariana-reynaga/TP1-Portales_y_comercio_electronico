@@ -8,6 +8,12 @@
             <div class="col-12">
                 <h1 class="mb-3">Ingresar a Administración</h1>
 
+                @if ($errors->any())
+                    <div class="container alert alert-danger" role="alert">
+                        Los datos ingresados no son validos.
+                    </div>
+                @endif
+
                 <form action="{{ route('auth.login.process') }}" method="POST">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>

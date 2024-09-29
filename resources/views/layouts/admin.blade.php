@@ -11,10 +11,10 @@
 <body>
     <x-nav-bar-admin></x-nav-bar-admin>
 
-    @if (session()->has('feedback.notif'))
+    @if (session()->has('feedback.notif.admin'))
         <div class="container alert alert-success alert-dismissible fade show">
 
-            {!! session()->get('feedback.notif') !!}
+            {!! session()->get('feedback.notif.admin') !!}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
