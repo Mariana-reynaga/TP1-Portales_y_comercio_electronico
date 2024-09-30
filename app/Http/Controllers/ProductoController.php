@@ -37,9 +37,9 @@ class ProductoController extends Controller
 
     public function createProduct(Request $req){
         $req->validate([
-            'name'=>'required | min:10 | max:30',
-            'price'=>'required | numeric | min:2500',
-            'stock' => 'required| numeric | min:0'
+            'prod_name'=>'required | min:10 | max:30',
+            'prod_price'=>'required | numeric | min:2500',
+            'prod_stock' => 'required| numeric | min:0'
         ],[
             'name.required' => 'El nombre es requerido',
             'name.min' => 'El nombre debe tener un minimo de 10 caracteres',
@@ -54,13 +54,13 @@ class ProductoController extends Controller
             'stock.min' => 'El stock debe ser como minimo 0',
         ]);
 
-        $input = $req->only(['name','price','stock']);
+        $input = $req->only(['prod_name','prod_price','prod_stock']);
 
         Producto::create($input);
 
         return redirect()
                ->route('productos.admin')
-               ->with('feedback.notif.admin', 'Lampara <b>"'.e($input['name']).'"</b> fue creada exitosamente');
+               ->with('feedback.notif.admin', 'Lampara <b>"'.e($input['prod_name']).'"</b> fue creada exitosamente');
     }
 
     public function editProductView(int $id){
@@ -73,9 +73,9 @@ class ProductoController extends Controller
 
     public function editProduct(Request $req, int $id){
         $req->validate([
-            'name'=>'required | min:10 | max:30',
-            'price'=>'required | numeric | min:2500',
-            'stock' => 'required| numeric | min:0'
+            'prod_name'=>'required | min:10 | max:30',
+            'prod_price'=>'required | numeric | min:2500',
+            'prod_stock' => 'required| numeric | min:0'
         ],[
             'name.required' => 'El nombre es requerido',
             'name.min' => 'El nombre debe tener un minimo de 10 caracteres',
@@ -90,7 +90,7 @@ class ProductoController extends Controller
             'stock.min' => 'El stock debe ser como minimo 0',
         ]);
 
-        $input = $req->only(['name','price', 'stock']);
+        $input = $req->only(['prod_name','prod_price', 'prod_stock']);
         $producto = Producto::findOrFail($id);
 
         //Actualiza con lo que tenemos en input
@@ -98,7 +98,7 @@ class ProductoController extends Controller
 
         return redirect()
                ->route('productos.admin')
-               ->with('feedback.notif.admin', 'Lampara <b>"'.e($input['name']).'"</b> fue editada exitosamente');
+               ->with('feedback.notif.admin', 'Lampara <b>"'.e($input['prod_name']).'"</b> fue editada exitosamente');
     }
 
     public function deleteProduct(int $id){
@@ -108,7 +108,7 @@ class ProductoController extends Controller
 
         return redirect()
             ->route('productos.admin')
-            ->with('feedback.notif.admin', 'El producto <b>"'.e($producto['name']).'"</b> se elimino con exito');
+            ->with('feedback.notif.admin', 'El producto <b>"'.e($producto['prod_name']).'"</b> se elimino con exito');
     }
 
 }

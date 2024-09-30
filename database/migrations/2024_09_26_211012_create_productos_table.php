@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id('prod_id');
-            $table->string('name');
-            $table->unsignedInteger('price');
-            $table->unsignedSmallInteger('stock');
+            $table->string('prod_name');
+            $table->unsignedInteger('prod_price');
+            $table->text('prod_description');
+            $table->unsignedSmallInteger('prod_stock');
             $table->timestamps();
         });
 

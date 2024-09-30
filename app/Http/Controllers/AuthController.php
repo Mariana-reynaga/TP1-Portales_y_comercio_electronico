@@ -11,7 +11,7 @@ class AuthController extends Controller
     }
 
     public function loginProcess(Request $req){
-        $credentials = $req->only(['email', 'password', 'name']);
+        $credentials = $req->only(['email', 'password', 'prod_name']);
 
         // si la auth no valida el usuario, devuelve a la pág de login
         if (!auth()->attempt($credentials)) {

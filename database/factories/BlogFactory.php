@@ -17,9 +17,9 @@ class BlogFactory extends Factory
     public function definition(): array
     {
         return [
-            'title'=> fake()->sentence(4),
-            'author'=> fake()->name(),
-            'post'=>fake()->paragraphs(4, true),
+            'blog_title'=> fake()->sentence(4),
+            'blog_author'=> fake()->name(),
+            'blog_post'=>fake()->paragraphs(4, true),
             'created_at'=>now(),
             'updated_at'=> now()
         ];

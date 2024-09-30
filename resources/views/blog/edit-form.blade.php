@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 
-@section('title', $articulo->title)
+@section('title', $articulo->blog_title)
 
 @section('content')
     <div class="container">
-        <h1>Editar {{$articulo->title}}</h1>
+        <h1>Editar {{$articulo->blog_title}}</h1>
 
         @if ($errors->any())
             <div class="container alert alert-danger" role="alert">
@@ -17,48 +17,48 @@
             @method('PUT')
 
             <div class="container my-3">
-                <label for="title" class="form-label">Titulo del articulo</label>
+                <label for="blog_title" class="form-label">Titulo del articulo</label>
                 <input
                     type="text"
-                    name="title"
-                    id="title"
+                    name="blog_title"
+                    id="blog_title"
                     class="form-control"
-                    value="{{ old('title',$articulo->title) }}"
+                    value="{{ old('blog_title',$articulo->blog_title) }}"
                 >
 
-                @error('title')
+                @error('blog_title')
                     <div class="text-danger"> {{ $message }} </div>
                 @enderror
             </div>
 
             <div class="container my-3">
-                <label for="author" class="form-label">Autor del articulo</label>
+                <label for='blog_author' class="form-label">Autor del articulo</label>
                 <input
                     type="text"
-                    name="author"
-                    id="author"
+                    name='blog_author'
+                    id='blog_author'
                     class="form-control"
-                    value="{{ old('author',$articulo->author) }}"
+                    value="{{ old('blog_author',$articulo->blog_author) }}"
                 >
 
-                @error('author')
+                @error('blog_author')
                     <div class="text-danger"> {{ $message }} </div>
                 @enderror
             </div>
 
             <div class="container my-3">
-                <label for="post" class="form-label">Post</label>
+                <label for="blog_post" class="form-label">Post</label>
 
                 <textarea
-                    name="post"
-                    id="post"
+                    name="blog_post"
+                    id="blog_post"
                     cols="30"
                     rows="10"
                     class="form-control"
-                >{{ old('post',$articulo->post) }}
+                >{{ old('blog_post',$articulo->blog_post) }}
                 </textarea>
 
-                @error('post')
+                @error('blog_post')
                     <div class="text-danger"> {{ $message }} </div>
                 @enderror
             </div>

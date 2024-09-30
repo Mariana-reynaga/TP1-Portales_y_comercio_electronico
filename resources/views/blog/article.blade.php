@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('title', $articulo->title)
+@section('title', $articulo->blog_title)
 
 @section('content')
-    <h1>{{ $articulo->title }}</h1>
-    <p>Autor: {{ $articulo->author }}</p>
+    <h1>{{ $articulo->blog_title }}</h1>
+    <p>Autor: {{ $articulo->blog_author }}</p>
 
     <div class="container bg-secondary">
-        <p>{{$articulo->post}}</p>
+        <p>{{$articulo->blog_post}}</p>
     </div>
 @endsection

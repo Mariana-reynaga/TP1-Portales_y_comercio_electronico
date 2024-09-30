@@ -8,14 +8,14 @@
     </div>
 
     <div class="container">
-        <div class="row row-cols-4 gx-3 gy-4">
+        <div class="row row-cols-4  gy-4">
 
             @foreach ( $blogs as $posts )
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $posts->title }}</h5>
-                            <p class="card-text">Autor: {{ $posts->author }}</p>
+                <div class="col mx-3">
+                    <div class="card" style="width: 18rem; min-height: 15rem;">
+                        <div class="card-body d-flex flex-column justify-content-evenly">
+                            <h5 class="card-title">{{ $posts->blog_title }}</h5>
+                            <p class="card-text">Autor: {{ $posts->blog_author }}</p>
 
                             <a href="{{ route('blog.article', ["id" => $posts->blog_id]) }}" class="btn bg-primary">Leer</a>
 

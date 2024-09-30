@@ -22,8 +22,8 @@
                         <div class="col">
                             <div class="card" style="width: 18rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $articulo->title }}</h5>
-                                    <p class="card-text">Autor: {{ $articulo->author }}</p>
+                                    <h5 class="card-title">{{ $articulo->blog_title }}</h5>
+                                    <p class="card-text">Autor: {{ $articulo->blog_author }}</p>
 
                                     <a href="{{ route('blog.editar.view', ["id" => $articulo->blog_id]) }}" class="btn bg-primary">Editar</a>
 

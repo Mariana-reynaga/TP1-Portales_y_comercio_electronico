@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('prod_name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -37,7 +37,7 @@ return new class extends Migration
         });
 
         DB::table('users')->insert([
-            'name' => 'admin',
+            'prod_name' => 'admin',
             'email'=> 'admin@test.com',
             'password'=> \Hash::make('admin123'),
             'created_at'=>now()

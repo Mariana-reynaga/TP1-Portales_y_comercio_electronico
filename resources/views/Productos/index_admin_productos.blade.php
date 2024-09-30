@@ -20,8 +20,8 @@
                 <div class="col">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $lampara->name }}</h5>
-                            <p class="card-text">${{ $lampara->price }}</p>
+                            <h5 class="card-title">{{ $lampara->prod_name }}</h5>
+                            <p class="card-text">${{ $lampara->prod_price }}</p>
 
                             <div class="container d-flex justify-content-around">
                                 <a href="{{ route('productos.editar.view', ["id" => $lampara->prod_id]) }}"
