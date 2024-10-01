@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
 
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}" >
+    <link rel="stylesheet" href="/css/estilos.css" >
 </head>
 <body>
     <x-nav-bar-admin></x-nav-bar-admin>

@@ -1,0 +1,24 @@
+.navbar-color{
+    background-color: #ADC178;
+    border-color: #DDE5B6;
+}
+
+.volver-btn{
+    border: #A98467 3px solid;
+    color: #6C584C;
+
+}.volver-btn:hover{
+    background-color: #A98467;
+    color: white;
+}
+
+.expand-view-btn{
+    border: #52796f 3px solid;
+    color: #52796f;
+}.expand-view-btn:hover{
+    background-color: #52796f;
+    color: white;
+}.expand-view-btn:active{
+    background-color: #52796f;
+    color: white;
+}

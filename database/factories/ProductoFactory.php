@@ -18,8 +18,9 @@ class ProductoFactory extends Factory
     {
         return [
             'prod_name' => fake()->words(3, true),
-            'prod_price' => fake()->randomNumber(4, false),
-            'prod_description'=>fake()->paragraphs(4, true),
+            'prod_price' => fake()->numberBetween(2500, 90000),
+            'prod_description'=>fake()->paragraphs(2, true),
+            'prod_material'=>fake()->words(1, true),
             'prod_stock'=> fake()->randomNumber(3, false),
             'created_at'=>now(),
             'updated_at'=> now()

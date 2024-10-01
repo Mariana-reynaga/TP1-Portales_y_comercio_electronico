@@ -1,5 +1,5 @@
 <div>
-    <nav class="navbar navbar-expand-lg bg-info mb-3 p-3">
+    <nav class="navbar navbar-expand-lg border border-2 border-top-0  rounded-bottom mb-3 p-3 navbar-color">
         <div class="container-fluid">
             <a href="/admin" class="navbar-brand fs-4">Administración</a>
 

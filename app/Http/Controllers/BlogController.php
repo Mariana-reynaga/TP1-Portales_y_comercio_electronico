@@ -10,6 +10,7 @@ class BlogController extends Controller
     public function index(){
         $todosBlog = Blog::all();
 
+
         return view('blog.index', [
             'blogs' => $todosBlog
         ]);
@@ -39,19 +40,23 @@ class BlogController extends Controller
         $req->validate([
             'blog_title'=>'required | min:10 | max:50',
             'blog_author'=>'required | min:10',
-            'blog_post' => 'required'
+            'blog_tags'=>'required',
+            'blog_post' => 'required | min:50'
         ],[
-            'blog_title.required' => 'El titulo es requerido',
-            'blog_title.min' => 'El titulo debe tener un minimo de 10 caracteres',
-            'blog_title.max' => 'El titulo debe tener un maximo de 50 caracteres',
+            'blog_title.required' => 'El titulo es requerido.',
+            'blog_title.min' => 'El titulo debe tener un minimo de 10 caracteres.',
+            'blog_title.max' => 'El titulo debe tener un maximo de 50 caracteres.',
             // //
-            'blog_author.required' => 'El autor es requerido',
-            'blog_author.min' => 'El autor debe tener un minimo de 10 caracteres',
+            'blog_author.required' => 'El autor es requerido.',
+            'blog_author.min' => 'El autor debe tener un minimo de 10 caracteres.',
             // //
-            'blog_post.required' => 'El post es requerido'
+            'blog_tags.required'=>'Los tags son requeridos.',
+            // //
+            'blog_post.required' => 'El post es requerido.',
+            'blog_post.min' => 'El post debe tener un minimo de 50 caracteres.'
         ]);
 
-        $input = $req->only(['blog_title','blog_author','blog_post']);
+        $input = $req->only(['blog_title','blog_author', 'blog_tags','blog_post']);
 
         Blog::create($input);
 
@@ -72,19 +77,23 @@ class BlogController extends Controller
         $req->validate([
             'blog_title'=>'required | min:10 | max:50',
             'blog_author'=>'required | min:10',
-            'blog_post' => 'required'
+            'blog_tags'=>'required',
+            'blog_post' => 'required | min:50'
         ],[
-            'blog_title.required' => 'El titulo es requerido',
-            'blog_title.min' => 'El titulo debe tener un minimo de 10 caracteres',
-            'blog_title.max' => 'El titulo debe tener un maximo de 50 caracteres',
+            'blog_title.required' => 'El titulo es requerido.',
+            'blog_title.min' => 'El titulo debe tener un minimo de 10 caracteres.',
+            'blog_title.max' => 'El titulo debe tener un maximo de 50 caracteres.',
             // //
-            'blog_author.required' => 'El autor es requerido',
-            'blog_author.min' => 'El autor debe tener un minimo de 10 caracteres',
+            'blog_author.required' => 'El autor es requerido.',
+            'blog_author.min' => 'El autor debe tener un minimo de 10 caracteres.',
             // //
-            'blog_post.required' => 'El post es requerido'
+            'blog_tags.required'=>'Los tags son requeridos.',
+            // //
+            'blog_post.required' => 'El post es requerido.',
+            'blog_post.min' => 'El post debe tener un minimo de 50 caracteres.'
         ]);
 
-        $input = $req->only(['blog_title','blog_author', 'blog_post']);
+        $input = $req->only(['blog_title','blog_author', 'blog_tags','blog_post']);
 
         $articulo = Blog::findOrFail($id);
 

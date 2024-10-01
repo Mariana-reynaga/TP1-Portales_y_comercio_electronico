@@ -13,5 +13,5 @@ class Blog extends Model
 
     protected $primaryKey = 'blog_id';
 
-    protected $fillable =  ['blog_title','blog_author','blog_post'];
+    protected $fillable =  ['blog_title','blog_author','blog_tags' ,'blog_post'];
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('prod_id');
             $table->string('prod_name');
             $table->unsignedInteger('prod_price');
+            $table->string('prod_material');
             $table->text('prod_description');
             $table->unsignedSmallInteger('prod_stock');
             $table->timestamps();

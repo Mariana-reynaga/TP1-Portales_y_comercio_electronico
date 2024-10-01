@@ -19,7 +19,8 @@ class BlogFactory extends Factory
         return [
             'blog_title'=> fake()->sentence(4),
             'blog_author'=> fake()->name(),
-            'blog_post'=>fake()->paragraphs(4, true),
+            'blog_tags'=>fake()->words(4, true),
+            'blog_post'=>fake()->paragraphs(6, true),
             'created_at'=>now(),
             'updated_at'=> now()
         ];
