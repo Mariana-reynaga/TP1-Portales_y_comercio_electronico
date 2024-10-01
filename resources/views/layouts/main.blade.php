@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    
+
+    <link rel="icon" type="image/x-icon" href="/img/mushroom-svg.svg">
+
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}" >
     <link rel="stylesheet" href="/css/estilos.css" >
   </head>
@@ -33,5 +35,16 @@
     </main>
 
     <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
+
+    <footer class="py-5 mt-4">
+        <div class="container d-flex justify-content-center">
+            <div class="d-flex flex-column text-center text-light">
+                <h4>TP1 - Portales y comercio electronico</h4>
+                <p>DWM4AP</p>
+                <p>Alumno: Mariana Reynaga</p>
+            </div>
+        </div>
+    </footer>
   </body>
+
 </html>

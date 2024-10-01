@@ -9,7 +9,7 @@
 
     <div class="container mt-5">
         <div class="container-fluid d-flex justify-content-center border-bottom pb-4">
-            <img src="/img/img-placeholder.png" alt="" class="img-fluid rounded" style="width: 80%; height:35vh;">
+            <img src="/img/banner-blog.jpg" alt="" class="img-fluid rounded" style="width: 80%; height:35vh;">
         </div>
 
 

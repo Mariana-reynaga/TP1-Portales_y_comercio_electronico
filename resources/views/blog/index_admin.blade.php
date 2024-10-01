@@ -10,11 +10,11 @@
     </div>
 
     <div class="container">
-        <div class="row row-cols-4 gx-3 gy-4">
+        <div class="row row-cols-3 gx-5 gy-4">
 
             @foreach ( $blogs as $articulo )
             <div class="col">
-                <div class="card shadow-sm p-3 mb-3 rounded" style="width: 18rem;">
+                <div class="card shadow-sm p-3 mb-3 rounded" style="width: 25rem;">
                     <div class="card-body">
                         <h5 class="card-title">{{ $articulo->blog_title }}</h5>
                     </div>

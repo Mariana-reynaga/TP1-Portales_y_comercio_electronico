@@ -9,11 +9,11 @@
 </div>
 
     <div class="container">
-        <div class="row row-cols-4  gy-4">
+        <div class="row row-cols-3 gx-5 gy-4">
 
             @foreach ( $blogs as $posts )
-                <div class="col mx-3">
-                    <div class="card" style="width: 20rem; min-height: 16rem;">
+                <div class="col">
+                    <div class="card" style="width: 25rem; min-height: 16rem;">
                         <div class="card-body d-flex flex-column justify-content-evenly">
                             <h3 class="card-title">"{{ $posts->blog_title }}"</h3>
 

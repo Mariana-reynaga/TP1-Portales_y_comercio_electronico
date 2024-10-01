@@ -9,12 +9,12 @@
     </div>
 
     <div class="container">
-        <div class="row row-cols-4 gx-3 gy-4">
+        <div class="row row-cols-4 gx-6 gy-4">
 
             @foreach ( $productos as $lampara )
                 <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img src="img/img-placeholder.png" class="card-img-top" alt="...">
+                    <div class="card" style="width: 20rem;">
+                        <img src="img/bunny-lamp.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{ $lampara->prod_name }}</h5>
                             <p class="card-text">${{ $lampara->prod_price }}</p>

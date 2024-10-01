@@ -9,7 +9,7 @@
 
     <div class="container d-flex mt-4">
         <div class="container shadow p-3 mb-5 bg-body-tertiary rounded">
-            <img src="/img/img-placeholder.png" class="card-img-top" alt="...">
+            <img src="/img/bunny-lamp.jpg" class="card-img-top" alt="...">
         </div>
 
         <div class="container ms-3">

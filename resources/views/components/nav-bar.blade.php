@@ -1,7 +1,11 @@
 <div>
     <nav class="navbar navbar-expand-lg border border-2 border-top-0 rounded-bottom mb-3 p-3 navbar-color">
         <div class="container-fluid">
-            <a href="/" class="navbar-brand fs-4">Wierdo Lamps</a>
+
+            <a href="/" class="navbar-brand fs-4">
+                <img src="/img/mushroom-svg.svg" width="30" height="24"  class="d-inline-block" alt="">
+                Wierdo Lamps
+            </a>
 
             {{-- menu hamburguesa toggable --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar">

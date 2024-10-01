@@ -80,7 +80,7 @@
             </div>
 
             <div>
-                <img src="/img/img-placeholder.png" style="height: 100%">
+                <img src="/img/img-placeholder.png" style="height: 80%">
             </div>
         </div>
     </div>
