@@ -12,7 +12,7 @@
 
 
     <div class="container">
-        <div class="row row-cols-4 gx-3 gy-3">
+        <div class="row row-cols-3  row-cols-xxl-4 gx-3 gy-3">
 
             @foreach ( $productos as $lampara )
 
